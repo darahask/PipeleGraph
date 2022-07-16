@@ -1,0 +1,38 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: PipeleSBT
+    network: rinkeby
+    source:
+      address: "0x8e3D16819099DB0fB0A0bAD59B6B1FAE2703f24c"
+      abi: PipeleSBT
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - ApprovalForAll
+        - Attest
+        - Revoke
+        - TransferBatch
+        - TransferSingle
+        - URI
+      abis:
+        - name: PipeleSBT
+          file: ./abis/PipeleSBT.json
+      eventHandlers:
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Attest(address,uint256,uint256,string)
+          handler: handleAttest
+        - event: Revoke(address,uint256)
+          handler: handleRevoke
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: URI(string,indexed uint256)
+          handler: handleURI
+      file: ./src/pipele-sbt.ts
