@@ -1,7 +1,7 @@
 {
-  "rinkeby": {
+  "goerli": {
     "PipeleSBT": {
-      "address": "0x8e3D16819099DB0fB0A0bAD59B6B1FAE2703f24c"
+      "address": "0xBB99FCaafCa56E36cBA706F70258bE6e453Fb028"
     }
   }
 }

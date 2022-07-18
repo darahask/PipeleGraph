@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: PipeleSBT
-    network: rinkeby
+    network: goerli
     source:
-      address: "0x8e3D16819099DB0fB0A0bAD59B6B1FAE2703f24c"
+      address: "0xBB99FCaafCa56E36cBA706F70258bE6e453Fb028"
       abi: PipeleSBT
-      startBlock: 11035600
+      startBlock: 7248673
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
