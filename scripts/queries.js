@@ -1,4 +1,5 @@
-const axios = require("axios").default;
+import axios from 'axios';
+
 
 let URL = "https://api.thegraph.com/subgraphs/name/darahask/pipe";
 
