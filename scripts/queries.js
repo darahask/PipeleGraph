@@ -27,11 +27,10 @@ let getAccessibleFiles = (
   owner
 }}`;
 
-let getData = async (func, val) => {
+export async function getData(func, val) {
   let query = func(val);
-  let res = await axios.post(URL, { query });
-  console.log(res.data.data);
-};
+  return await axios.post(URL, {query});
+}
 
 /* uncomment to test */
 
